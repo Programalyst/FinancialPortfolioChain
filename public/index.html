@@ -4,10 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Financial Portfolio Blockchain</title>
 </head>
 <body>
     <h1>Financial Portfolio Blockchain</h1>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+        
+        //Global Chart variables
+        Chart.defaults.global.defaultFontFamily = 'Verdana';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#FFF';
+        
+
+        let portfolioChart = new Chart(myChart, {
+            type: 'doughnut', 
+            data: {
+                labels:['CPF Savings', 'REITs', 'Stocks', 'ETFs', 'Unit Trusts', 'Bonds', 'Insurance Cash Value','Gold'],
+                datasets:[{
+                        label:'Assets',
+                        data:[
+                            250000,
+                            15000,
+                            3000,
+                            65000,
+                            40000,
+                            0,
+                            35000,
+                            10000
+                        ],
+                        backgroundColor:[
+                            //last value is the alpha
+                            'rgba(50,200,132,1)',
+                            'rgba(54,162,235,1)',
+                            'rgba(255,206,255,1)',
+                            'rgba(75,192,192,1)',
+                            'rgba(153,102,255,1)',
+                            'rgba(255,159,64,1',
+                            'rgba(255,99,132,1)',
+                            'rgba(255,255,0,1)'
+                        ],
+                        borderWidth:1,
+                        borderColor:'#777',
+                        hoverBorderWidth:2,
+                        hoverBorderColor:'#FFF'
+
+                    } 
+                ]
+
+            },
+            options: {
+                title:{
+                    display:true,
+                    text:'My Investment Portfolio',
+                    fontSize:25
+                },
+                legend:{
+                    position: 'right'
+                },
+                layout:{
+                    padding:{
+                        left:0,
+                        right:0,
+                        bottom:150,
+                        top:0
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
