@@ -7,8 +7,13 @@ adss
 
 # Tools
 Node.js - for server
+
 Express JS - web server
+
 UUID - user id generation
+
 Bootstrap - CSS styling
+
+Chart.js - for generating charts
 
 Ethereum 
