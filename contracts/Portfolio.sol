@@ -2,8 +2,8 @@ pragma solidity 0.5.10;
 
 contract Portfolio {
     //portfolio variables
-    address ownerAddress; //Ethereum address
-    bytes32 ownerName;
+    address public ownerAddress; //Ethereum address
+    string public ownerName;
 
     // Model an Asset
     struct Asset {
@@ -23,7 +23,7 @@ contract Portfolio {
 
     //constructors are optional in this version of Solidity
     //constructor function is not deployed to the blockchain
-    constructor (address _ownerAddress, bytes32 _ownerName) public {
+    constructor (address _ownerAddress, string memory _ownerName) public {
         ownerAddress = _ownerAddress;
         ownerName = _ownerName;
     }
