@@ -29,7 +29,15 @@ const Web3 = require('web3'); // import web3 v1.0 constructor
         web3 = new Web3(web3Provider);
     }
 /*
-    
+    var Portfolio = artifacts.require("./Portfolio.sol");
+
+    contract("Portfolio", function(accounts){
+        var portfolioInstance;
+        
+        Portfolio.deployed().then(function(instance){
+		    return instance.assetsCount();
+	    });
+    }
     // Instantiate a new truffle contract from the artifact
     contracts.Portfolio = TruffleContract(portfolio);
     // Connect provider to interact with contract
